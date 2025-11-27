@@ -38,6 +38,12 @@ header{
     align-items: center;
 }
 
+section{
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+
  /***********Navigation styling***********/
 nav.navigation{
     display: none
@@ -102,15 +108,75 @@ img.close.show{
     display: flex;
 }
 
+/*******hero section ******/
+
+.hero_container{
+    width: 90%;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    
+}
+ 
+.hero_container img{
+    max-width: 90%;
+}
+
+.hero_container .hero_description{
+    margin-top: 40px;
+    
+}
+
+.hero_container .hero_description h1{
+    color: var(--primary-blue-950);
+    font-size: 2.25rem;
+    font-weight: var(--font-weight-bold);
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.hero_container .hero_description p{
+    color: var(--neutral-gray-950);
+    opacity: 50%;
+    word-spacing: 0.2rem;
+    line-height: 2;
+    margin-bottom: 30px;
+}
+
+/******************Buttons***************************/
+
+.cta{
+    max-width: max-content;
+    background-color: var(--primary-orange-400);
+    padding: 15px 30px;
+    font-family: var(--base-font-size);
+    font-size: 1rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--neutral-gray-50);
+    border:none;
+    border-radius:25px;
+    filter:contrast(200%) drop-shadow(0px 5px 5px var(--primary-orange-400));
+}
+
+.cta:hover{
+    opacity: 55%;
+    cursor:pointer;
+}
+    
+
+
+/*************Media Query**********/
 @media only screen and (min-width:991px) {
     header{
         max-width: 90%;
     }
-
+         /*****navigation****/
     nav.navigation{
         display:flex;
         justify-content: space-between;
-
     }
 
     nav.navigation a {
@@ -133,21 +199,27 @@ img.close.show{
     .nav_cta{
         display:flex
     }
-    
-}
 
 
-/****buttons***/
+        /*****hero******/
+    .hero_container{
+        flex-direction: row-reverse;
+    }
 
-.nav_cta{
-    background-color: var(--primary-orange-400);
-    padding: 15px 30px;
-    font-family: var(--base-font-size);
-    font-size: 1rem;
-    font-weight: var(--font-weight-medium);
-    color: var(--neutral-gray-50);
-    border:none;
-    border-radius:25px;
-    filter:contrast(200%) drop-shadow(0px 5px 5px var(--primary-orange-400))
+      .hero_container .hero_description{
+        flex:1;
+        text-align: left;
+    }
 
+    .hero_container .hero_description p{
+        max-width: 450px;
+        font-size: 1.2rem;
+    }
+
+    .hero_container .hero_description h1{
+        max-width: 500px;
+        font-size: 3rem;
+        line-height: 1.1;
+        margin-bottom: 25px;
+    }
 }

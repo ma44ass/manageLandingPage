@@ -27,7 +27,6 @@
 
 body{
     font-family: var(--primary-font);
-    font-size: var(--base-font-size);
 }
 
 header{
@@ -54,8 +53,8 @@ nav.navigation{
 }
 
 nav.navigation.active{
-    padding:20px;
-    margin: 20px auto;
+    padding:2rem;
+    margin: 2rem auto;
     display:flex;
     flex-direction: column;
     justify-content: space-around;
@@ -77,7 +76,7 @@ nav.navigation.active{
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.363);
     z-index: 9;
     transition: opacity 0.3s ease-in-out;
 }
@@ -90,9 +89,9 @@ nav.navigation.active ~ #menu_backdrop{
 
 nav.navigation.active a{
     text-decoration: none;
-    padding: 15px;
+    padding: 1rem;
     color: var(--primary-blue-950);
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: var(--font-weight-bold);
 }
 
@@ -110,9 +109,10 @@ img.close.show{
 
 /*******hero section ******/
 
-.hero_container{
+.hero_container, .why_manage{
     width: 90%;
     margin: 0 auto;
+    margin-bottom: 5rem;
     display:flex;
     flex-direction: column;
     justify-content: space-between;
@@ -123,50 +123,79 @@ img.close.show{
  
 .hero_container img{
     max-width: 90%;
+    flex:1;
+    filter: contrast(200%);
 }
 
-.hero_container .hero_description{
-    margin-top: 40px;
-    
+.description{
+    margin-top: 2rem;
+    flex: 1 
 }
 
-.hero_container .hero_description h1{
-    color: var(--primary-blue-950);
-    font-size: 2.25rem;
-    font-weight: var(--font-weight-bold);
-    line-height: 1.5;
-    margin-bottom: 15px;
-}
-
-.hero_container .hero_description p{
+.description p{
     color: var(--neutral-gray-950);
     opacity: 50%;
     word-spacing: 0.2rem;
-    line-height: 2;
-    margin-bottom: 30px;
+    font-size: 1.2rem;
+    line-height: 1.75;
+    margin-bottom: 2rem;
 }
+
+.description h1, .description h2, .description h3{
+    color: var(--primary-blue-950);
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    margin-block: 0.5rem;
+}
+
+.why_manage h2{
+    font-size:2.25rem;
+    line-height: 1.5;
+}
+
+.features h3{
+    font-size: 1.2rem;
+    background-color: var(--neutral-orange-50);
+    display: flex; 
+    align-items: center;
+    gap:5%;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.features{
+    text-align: left;
+}
+
+
 
 /******************Buttons***************************/
 
-.cta{
-    max-width: max-content;
+.cta, span{
+    min-width: fit-content;
     background-color: var(--primary-orange-400);
-    padding: 15px 30px;
+    padding: 1rem 2rem;
     font-family: var(--base-font-size);
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: var(--font-weight-medium);
     color: var(--neutral-gray-50);
     border:none;
     border-radius:25px;
-    filter:contrast(200%) drop-shadow(0px 5px 5px var(--primary-orange-400));
+    filter:contrast(200%);
+    text-align: center;
+}
+
+.cta{
+    padding: 1rem 3rem;
+    filter: contrast(200%) drop-shadow(0px 5px 5px var(--primary-orange-400));
 }
 
 .cta:hover{
     opacity: 55%;
     cursor:pointer;
 }
-    
 
+    
 
 /*************Media Query**********/
 @media only screen and (min-width:991px) {
@@ -182,9 +211,9 @@ img.close.show{
     nav.navigation a {
         text-decoration: none;
         color: var(--primary-blue-950);
-        font-size: 1rem;
+        font-size: 1.25rem;
         font-weight: var(--font-weight-normal);
-        padding: 20px;    
+        padding: 1.2em;    
     }
 
     nav.navigation a:hover{
@@ -197,29 +226,67 @@ img.close.show{
     }
 
     .nav_cta{
-        display:flex
+        display:flex;
+        
     }
 
-
-        /*****hero******/
+        /******main******/
     .hero_container{
+        margin-top:4em;
         flex-direction: row-reverse;
     }
 
-      .hero_container .hero_description{
+    .why_manage{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: baseline;
+    }
+
+    .hero_container .description h1,
+    .features h3{
+        max-width: 60%;
+        font-size: 3.5rem;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+    }
+
+    .why_manage .description h2{
+        max-width: 60%;
+        font-size: 2.75rem;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+    }
+
+    .hero_container .description,
+    .why_manage .description{
         flex:1;
         text-align: left;
     }
 
-    .hero_container .hero_description p{
-        max-width: 450px;
-        font-size: 1.2rem;
+    .hero_container .description p,
+    .why_manage .description .p{
+        max-width: 60%;
+        font-size: 1.5rem;
     }
 
-    .hero_container .hero_description h1{
-        max-width: 500px;
-        font-size: 3rem;
-        line-height: 1.1;
-        margin-bottom: 25px;
+    .features h3{
+        font-size: 1.75rem;
+        max-width: 100%;
+        background-color: unset;
     }
+
+     .features p{
+        text-align: justify;
+        margin-left: 15%;
+        max-width: 55%
+    }
+
+    .hero_container img,
+    .features{
+        flex:1;
+    }
+
+    
+
 }

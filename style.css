@@ -27,6 +27,7 @@
 
 body{
     font-family: var(--primary-font);
+    overflow-x: hidden;
 }
 
 header{
@@ -38,7 +39,7 @@ header{
 }
 
 section{
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -141,7 +142,7 @@ img.close.show{
     margin-bottom: 2rem;
 }
 
-.description h1, .description h2, .description h3{
+h1, h2, h3, h4 {
     color: var(--primary-blue-950);
     font-size: 2.5rem;
     font-weight: var(--font-weight-bold);
@@ -167,11 +168,103 @@ img.close.show{
     text-align: left;
 }
 
+.testimonials{
+    padding: 40px 0;
+    text-align: center;
+}
+
+.testimonials h2{
+    margin-bottom: 3rem;
+}
+
+.testimonial_wrapper{
+    width: 100vw;
+    overflow: hidden; 
+    margin: 0 auto; 
+}
+
+.testimonials .slider{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin:3rem 0;
+    margin-left: 0.5rem;
+    padding:0;
+    width: 400vw;
+    transition: transform 0.5s ease-in-out;
+    font-size: 0;
+}
+
+.testimonials .slider h4{
+    font-size: 1.5rem;
+    padding-top: 4rem;
+    margin-block: 2rem
+}
+
+.testimonials .slider li{
+    background-color: var(--neutral-gray-50);
+    border-radius: 10px;
+    flex-basis: calc(100vw - 1rem); 
+    min-width: calc(100vw - 1rem);
+    flex-shrink: 0;
+    margin: 0 0.5rem;
+    padding: 0;
+    margin-top: 8rem; 
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    font-size:  1rem;
+}
+
+.content_wrapper{
+    width: 100%;
+    padding: 1.5rem 1.2rem;
+    margin: 0;
+    text-align: center;
+}
+
+.testimonials .slider li p{
+    font-size: 1.05rem;
+    font-weight: var(--font-weight-normal)
+}
+
+.testimonials .slider li img{
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slider_dots{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:8px;
+    margin-top:0.5rem;
+    margin-bottom: 3rem;
+}
+
+.dot{
+    display: block;
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-orange-400);
+    cursor: pointer;
+    background-color: #ffff;
+    transition: background-color 0.3s;
+}
+.active{
+    background-color: var(--primary-orange-400);
+}
 
 
 /******************Buttons***************************/
 
-.cta, span{
+.cta, .marker{
     min-width: fit-content;
     background-color: var(--primary-orange-400);
     padding: 1rem 2rem;

@@ -43,9 +43,7 @@ header{
 section{
     max-width: 100%;
     margin: 0 auto;
-    padding: 20px 20px;
 }
-
 
  /***********Navigation styling***********/
 nav.navigation{
@@ -58,7 +56,7 @@ nav.navigation{
 
 nav.navigation.active{
     padding:2rem;
-    margin: 2rem auto;
+    margin: 0 auto;
     display:flex;
     flex-direction: column;
     justify-content: space-around;
@@ -67,7 +65,7 @@ nav.navigation.active{
     background-color: #ffff;
     border-radius:5px;
     top: 80px;
-    left:5px;
+    left: 0.5%;
     width: 95vw; 
     min-width: unset;
     z-index:10;
@@ -118,7 +116,7 @@ img.close.show{
 .hero_container, .why_manage{
     width: 90%;
     margin: 0 auto;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     display:flex;
     flex-direction: column;
     justify-content: space-between;
@@ -128,7 +126,7 @@ img.close.show{
 }
  
 .hero_container img{
-    max-width: 90%;
+    max-width: 100%;
     flex:1;
     filter: contrast(200%);
 }
@@ -180,6 +178,7 @@ h1, h2, h3, h4 {
 
 .testimonials h2{
     margin-bottom: 3rem;
+    padding-inline: 1rem;
 }
 
 .testimonial_wrapper{
@@ -194,7 +193,7 @@ h1, h2, h3, h4 {
     flex-direction: row;
     justify-content: flex-start;
     margin:3rem 0;
-    margin-left: 0.5rem;
+    margin-left: 0.20rem;
     padding:0;
     width: 400vw;
     transition: transform 0.5s ease-in-out;
@@ -204,7 +203,7 @@ h1, h2, h3, h4 {
 .testimonials .slider h4{
     font-size: 1.5rem;
     padding-top: 4rem;
-    margin-block: 2rem
+    margin-block: 1.5rem
 }
 
 .testimonials .slider li{
@@ -224,15 +223,8 @@ h1, h2, h3, h4 {
     font-size:  1rem;
 }
 
-.content_wrapper{
-    width: 100%;
-    padding: 1.5rem 1.2rem;
-    margin: 0;
-    text-align: center;
-}
-
 .testimonials .slider li p{
-    font-size: 1.05rem;
+    font-size: 1.5rem;
     font-weight: var(--font-weight-normal)
 }
 
@@ -267,6 +259,7 @@ h1, h2, h3, h4 {
 }
 
 .cta_section{
+    padding:1rem;
     background-image: url(images/bg-simplify-section-mobile.svg);
     background-repeat: no-repeat;
     background-position: left;
@@ -288,18 +281,13 @@ h1, h2, h3, h4 {
 
 footer{
     background-color: var(--neutral-gray-950);
-    padding: 2rem 2rem;
+    padding: 2rem 1rem;
     color:#ffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
 }
  footer .footer_content{
     display: flex;
     flex-direction: column;
     width: 100%;
-    align-items: center;
     gap: 2rem;
  }
 
@@ -307,17 +295,19 @@ footer{
     display: flex;
     width:100%;
     justify-content: space-between;
-    align-items: center;
+    
  }
 
- footer .form input{
-    padding: 1rem 1.5rem;
+ footer  .footer_content .form input{
+    padding: 1rem 0.5rem;
     font-size: 1rem;
+    border: 2px solid var(--primary-blue-950);
     border-radius: 25px;
     background-color: var(--neutral-orange-50);
-    margin-right: 2rem;
+    margin-right: 1.5rem;
     flex:1;
  }
+
 
  footer .links{
     display: flex;
@@ -353,16 +343,17 @@ footer{
 
  }
 
- footer .brand .social{
+ footer .footer_content .brand .social{
     display: flex;
     justify-content: center;
-    gap: 2rem
+    gap: 3rem
  }
 
- footer .brand p{
+ footer  p{
     color:var(--primary-gray-50);
     opacity: 50%;
     font-size: var(--font-weight-normal);
+    text-align: center;
  }
 
 /******************Buttons***************************/
@@ -398,13 +389,13 @@ footer{
 .inversed{
     background-color: #ffff;
     color:var(--primary-orange-400);
+    font-weight: var(--font-weight-bold);
 }
 
 .cta_submit{
-    padding:1rem 1rem;
+    padding:1rem 1.5rem;
     filter: contrast(200%);
     cursor:pointer;
-    flex:1
 }
 
 .cta_submit:hover{
@@ -414,8 +405,12 @@ footer{
 
 /*************Media Query**********/
 @media only screen and (min-width:991px) {
+section{
+    padding-inline:5rem; 
+}
+
     header{
-        max-width: 90%;
+        padding-inline: 10%;
     }
          /*****navigation****/
     nav.navigation{
@@ -461,7 +456,7 @@ footer{
     .hero_container .description h1,
     .features h3{
         max-width: 60%;
-        font-size: 3.5rem;
+        font-size: 3rem;
         line-height: 1.1;
         margin-bottom: 2rem;
     }
@@ -513,7 +508,7 @@ footer{
         background-image: url(images/bg-simplify-section-desktop.svg);
         background-position: center;
         max-width: 100%;
-        padding:4rem 8rem;
+        padding:5rem 8rem;
     }
 
     .cta_section h2{
@@ -521,6 +516,48 @@ footer{
         max-width: 40%;
         margin-right: 4rem;
         margin-block: 0;
+    }
+
+    footer .footer_content{
+        padding: 2rem 8rem;
+        gap: 15%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+
+    footer .footer_content .links{
+        gap:15rem;
+    }
+
+    footer .footer_content .form{
+        width:100%;
+        display: flex;
+        align-self: baseline;
+        
+    }
+     footer .footer_content .form input{
+        padding-right: 3rem;
+        min-width: 40%;
+        margin: 0;
+    }
+
+
+    footer .footer_content .brand{
+        flex-direction: column-reverse;
+        gap: 6rem;
+        flex:1;
+        align-self: flex-end;
+    }
+
+    footer .footer_content .brand .social{
+        gap:1rem;
+    }
+
+    footer  p {
+        padding-left: 70%;
     }
 
 }

@@ -481,7 +481,7 @@ section{
     }
 
     .features h3{
-        font-size: 1.75rem;
+        margin-top: 2rem;
         max-width: 100%;
         background-color: unset;
     }
@@ -494,6 +494,10 @@ section{
     .hero_container img,
     .features{
         flex:1;
+    }
+
+    .testimonials .slider li img{
+        top: -30%;
     }
 
     .slider_dots {
